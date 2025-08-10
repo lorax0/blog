@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Felietony Polityczno-Prawnicze</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      max-width: 900px;
+      margin: 2rem auto;
+      padding: 0 1rem;
+      background: #f9f9f9;
+      color: #222;
+    }
+    header {
+      text-align: center;
+      margin-bottom: 2rem;
+    }
+    article {
+      background: white;
+      padding: 1rem 1.5rem;
+      margin-bottom: 1.5rem;
+      box-shadow: 0 2px 5px rgb(0 0 0 / 0.1);
+      border-radius: 6px;
+    }
+    article h2 {
+      margin-top: 0;
+      color: #2c3e50;
+    }
+    article time {
+      font-size: 0.9rem;
+      color: #999;
+    }
+    article p {
+      line-height: 1.6;
+      white-space: pre-wrap;
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>Felietony Polityczno-Prawnicze</h1>
+  <p>Witaj na moim blogu z felietonami! Zapraszam do lektury.</p>
+</header>
+
+<main id="posts"></main>
+
+<script>
+  const felietony = [
+    {
+      id: 1,
+      title: "Prawo a polityka: wprowadzenie",
+      date: "2025-08-10",
+      content: `Polityka i prawo są ze sobą nierozerwalnie związane...`
+    },
+    {
+      id: 2,
+      title: "Aktualne wyzwania legislacyjne",
+      date: "2025-08-05",
+      content: `W dzisiejszych czasach legislacja stoi przed wieloma wyzwaniami...`
+    },
+    // Dodaj tutaj kolejne felietony
+  ];
+
+  const postsContainer = document.getElementById('posts');
+
+  felietony.forEach(post => {
+    const article = document.createElement('article');
+    article.innerHTML = `
+      <h2>${post.title}</h2>
+      <time datetime="${post.date}">${new Date(post.date).toLocaleDateString('pl-PL')}</time>
+      <p>${post.content}</p>
+    `;
+    postsContainer.appendChild(article);
+  });
+</script>
+
+</body>
+</html>
